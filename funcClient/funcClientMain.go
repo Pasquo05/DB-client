@@ -4,6 +4,12 @@ import (
 	"fmt"
 )
 
+type PhoneNumber struct {
+	Name        string
+	Surname     string
+	Phonenumber string
+}
+
 type ClientMatteo struct {
 	c client
 }
@@ -22,7 +28,7 @@ func (c ClientMatteo) DeletePhoneNumber() {
 	c.c.Delete("/phoneNumbers/delete/", Id)
 }
 
-func NewPhoneNumber() funcdbserver.PhoneNumber {
+func NewPhoneNumber() PhoneNumber {
 	/*
 		fmt.Println("Scrivere id , titolo , desc")
 		idInput := ""
@@ -34,7 +40,7 @@ func NewPhoneNumber() funcdbserver.PhoneNumber {
 		fmt.Scanln(&idInput)
 	*/
 
-	value := funcdbserver.PhoneNumber{
+	value := PhoneNumber{
 		Name:        "ciao",
 		Surname:     "Bella",
 		Phonenumber: "333333",
